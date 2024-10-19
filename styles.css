@@ -28,20 +28,14 @@ img.fullscreen-img {
     height: auto; /* Maintain aspect ratio */
   }
   
-/* Hide main content and show full-screen image on mobile */
+/* Mobile-first: Show the full-screen image and hide the main content on mobile screens */
 @media (max-width: 768px) {
     main {
         display: none; /* Hide main content on mobile */
     }
 
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden; /* Prevent scrolling */
-    }
-
     .fullscreen-section {
-        display: flex;
+        display: flex; /* Show the full-screen section on mobile */
         justify-content: center;
         align-items: center;
         position: fixed;
@@ -56,12 +50,12 @@ img.fullscreen-img {
     .fullscreen-img {
         width: 100vw;
         height: 100vh;
-        object-fit: fill; /* Ensure the image covers the viewport while maintaining aspect ratio */
+        object-fit: cover; /* Ensure the image covers the viewport while maintaining aspect ratio */
         display: block;    /* Ensure the image is displayed */
     }
 }
 
-/* Show the main content and hide the full-screen image on larger devices */
+/* Ensure the full-screen section is hidden for larger screens */
 @media (min-width: 769px) {
     .fullscreen-section {
         display: none; /* Hide full-screen section on larger devices */
@@ -70,7 +64,7 @@ img.fullscreen-img {
     .fullscreen-img {
         display: none; /* Hide the image on larger screens */
     }
-}  
+}
 
 header {
     background-color: #bfbfbf;
