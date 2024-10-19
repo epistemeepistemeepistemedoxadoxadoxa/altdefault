@@ -22,6 +22,39 @@ body {
     height: 100%;
 }
 
+img.fullscreen-img {
+    display: block;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Breakpoint for devices with a width of 768px and below (iPads in portrait, mobile phones) */
+  @media only screen and (max-width: 768px) {
+    img.fullscreen-img {
+      width: 100vw;   /* Full width of the viewport */
+      height: 100vh;  /* Full height of the viewport */
+      object-fit: cover;  /* Ensure the image covers the screen */
+    }
+  }
+  
+  /* Breakpoint for iPads in landscape mode (width between 769px and 1024px) */
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    img.fullscreen-img {
+      width: 100vw;   /* Full width of the viewport */
+      height: 100vh;  /* Full height of the viewport */
+      object-fit: cover;  /* Ensure the image covers the screen */
+    }
+  }
+  
+  /* Default styles for larger screens (e.g., desktop) */
+  @media only screen and (min-width: 1025px) {
+    img.fullscreen-img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
 header {
     background-color: #bfbfbf;
     font-weight: 100;
