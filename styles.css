@@ -45,6 +45,7 @@ img.fullscreen-img {
         height: 150vh;  /* Full viewport height */
         z-index: 99;    /* Keep it on top */
         background-color: rgb(255, 255, 255); /* Optional: A fallback background */
+        overflow: hidden;
     }
 
     .fullscreen-img {
