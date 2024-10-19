@@ -46,14 +46,6 @@ img.fullscreen-img {
     }
   }
   
-  /* Default styles for larger screens (e.g., desktop) */
-  @media only screen and (min-width: 1025px) {
-    img.fullscreen-img {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-    }
-  }
 
 header {
     background-color: #bfbfbf;
