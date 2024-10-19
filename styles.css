@@ -103,19 +103,29 @@ h2 {
 main {
     display: grid;
     grid-auto-flow: column; /* Fills columns first for horizontal scrolling */
-    grid-template-columns: repeat(auto-fill, minmax(auto, max-content)); /* Flexible width based on content */
-    grid-template-rows: repeat(2, auto); /* Limit to two rows */
-    row-gap: 20px;
-    column-gap: 20px;
+    
+    /* Flexible column width: auto to fit content, max-content ensures columns can grow to the max size */
+    grid-template-columns: repeat(auto-fill, minmax(auto, max-content)); 
+    
+    /* Dynamic row heights, allowing each row to adjust based on its content */
+    grid-template-rows: repeat(2, auto); /* This ensures two dynamic-height rows */
+
+    row-gap: 20px; /* Consistent gap between rows */
+    column-gap: 20px; /* Consistent gap between columns */
+    
+    /* Padding around the main content to prevent content from touching the edges */
     padding-left: 2vh;
     padding-right: 2vh;
     padding-top: 2vh;
-    padding-bottom: 24vh;
-    min-height: 100vh;        /* Ensure main uses full viewport height */
-    width: max-content; /* Expands horizontally to fit content */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical overflow */
-    box-sizing: border-box;
+    padding-bottom: 24vh; /* Extra bottom padding if needed for scrollable areas */
+
+    min-height: 100vh; /* Ensure the container takes up the full viewport height */
+    width: max-content; /* Expands horizontally to fit the total content width */
+    
+    overflow-x: auto; /* Enable horizontal scrolling for content that exceeds viewport width */
+    overflow-y: hidden; /* Disable vertical scrolling to maintain horizontal layout */
+
+    box-sizing: border-box; /* Ensure padding and border are included in the element’s total width/height */
 }
 
 p {
