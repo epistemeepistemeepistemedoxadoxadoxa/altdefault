@@ -1,0 +1,489 @@
+/* General Styles */
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    background-color: #bfbfbf;
+    height: 100%;
+}
+
+header {
+    background-color: #bfbfbf;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding-left: 20px;
+    max-height: 40px;
+    width: 700vw;
+    position: sticky;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, .1);
+}
+
+h1 {
+    display: flex;
+    font-size: .75em;
+    font-weight: 100;
+    unicode-bidi: isolate;
+    justify-content: flex-start;
+    align-items: center;
+    transform: translateY(5px);
+}
+
+h2 {
+    display: block;
+    font-size: 0.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 100;
+    unicode-bidi: isolate;
+}
+
+/* Layout Styles */
+main {
+    display: grid;
+    grid-auto-flow: column; /* Fills columns first for horizontal scrolling */
+    grid-template-columns: repeat(auto-fill, minmax(auto, max-content)); /* Flexible width based on content */
+    grid-template-rows: repeat(2, auto); /* Limit to two rows */
+    column-gap: 20px;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 24vh;
+    min-height: 100vh;        /* Ensure main uses full viewport height */
+    width: max-content; /* Expands horizontally to fit content */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical overflow */
+    box-sizing: border-box;
+}
+
+p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: block;
+}
+
+footer {
+    background-color: #bfbfbf;
+    color: black;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;  /* Normal positioning so it's after the main content */
+    bottom: 2vh;
+    width: 100%;
+    position: fixed;
+    font-size: .75em;    
+}
+
+#greengif .font-sampler {
+    overflow-y: hidden;
+}
+    
+
+#tool .font-sampler {
+    overflow-y: visible;
+
+}
+
+
+
+.font-sampler, .font-sampler-static {
+    display: inline-block;
+    min-width: max-content; /* Adjust based on content size */
+    width: auto; /* Allow natural growth */
+    max-width: 100%; /* Prevent overflow outside the container */
+    height: auto;
+    padding: 20px;
+    background-color: #bfbfbf;
+    border: 1px solid #11b868;
+    border-radius: 5px;
+    box-sizing: border-box;
+    max-height: 300px;
+}
+
+/* Styles for headings within font-sampler sections */
+.font-sampler h2, .font-sampler-static h2 {
+    font-size: medium;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+input[type="range" i] {
+    appearance: auto;
+    cursor: pointer;
+    color: light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
+    padding: initial;
+    border: initial;
+    margin: 2px;
+    position: absolute; /* Keeps the slider within the bottom of each section */
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+}
+
+.sample-text {
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    overflow: hidden; /* Prevents the text from overflowing */
+    text-align: left;
+    display: inline-block; /* Adjusted to control element width */
+    max-width: 100%;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    caret-color: transparent;
+    transform-origin: bottom left; /* Sets scaling from the bottom-left corner */
+}
+
+.sample-text::-webkit-scrollbar {
+    display: none;  /* Hides scrollbar in WebKit browsers */
+}
+
+.static-text {
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+    color: #333;
+}
+
+.type-image {
+    width: 100%; /* Adjust as needed */
+    height: auto;
+    display: block; /* Centers the image if using margin auto */
+    margin: 10px auto; /* Centering within the section */
+    opacity: 0.8; /* Control transparency */
+}
+
+.responsive-image {
+    height: 200px;
+    width: auto;
+    max-width: 100%; /* Ensures image does not exceed container */
+    display: block;
+    margin: 10px auto;
+    float: left;
+}
+
+#crete1 .responsive-concrete {
+    max-height: 600px; /* Adjust the height as needed */
+    width: auto;   /* Maintain the natural aspect ratio */
+    display: block;
+    margin: 10px auto; /* Centers the PDF horizontally */
+    transform: translateY(-45px); /* Adjust positioning if needed */
+    mix-blend-mode: multiply;
+}
+
+#crete2 .responsive-concrete {
+    max-height: 100%;  /* Ensure the image respects the section's height */
+    max-width: 100%;   /* Ensure the image does not overflow the width */
+    height: auto;      /* Maintain the aspect ratio */
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    mix-blend-mode: multiply;
+}
+
+#crete3 .responsive-concrete {
+    max-height: 100%;  /* Ensure the image respects the section's height */
+    max-width: 100%;   /* Ensure the image does not overflow the width */
+    height: auto;      /* Maintain the aspect ratio */
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    mix-blend-mode: normal;
+    filter: grayscale(100%) contrast(200%);
+
+}
+
+.grid-span {
+    grid-column: span 2; /* Span two columns */
+    grid-row: span 2;    /* Span two rows */
+    max-height: 600px;   /* Control maximum height */
+    max-width: 600px;    /* Set a maximum width to avoid overflow */
+    box-sizing: border-box;
+    overflow: visible;    /* Ensure overflow is hidden */
+}
+
+.number-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    transform: translateY(-95px); /* Adjust positioning if needed */
+    z-index: 99;
+}
+
+.number {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #bfbfbf;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    margin: 0 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-size: small;
+}
+
+#crete2-numbers {
+    transform: translateY(-70px); /* Move the container down */
+}
+
+#crete2-img {
+    transform: translateY(-60px) /* Move the container down */
+}
+
+#crete3-numbers {
+    transform: translateY(-70px); /* Move the container down */
+}
+
+#crete3-img {
+    transform: translateY(-60px) /* Move the container down */
+}
+
+.number:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+/* Slider Styles */
+.font-size-slider {
+    -webkit-appearance: none; /* Removes default appearance in Chrome/Safari */
+    -moz-appearance: none; /* Removes default appearance in Firefox */
+    appearance: none; /* Standard property */
+    width: 100%;
+    height: 8px; /* Track height */
+    background: #ddd; /* Track color */
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    cursor: pointer; /* Ensures a pointer cursor on hover */
+}
+
+.font-size-slider:hover {
+    opacity: 1; /* Changes track opacity on hover */
+}
+
+/* Custom styles for the slider thumb in WebKit browsers (Chrome, Safari) */
+.font-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    background: #4CAF50; /* Thumb color */
+    cursor: pointer;
+    border-radius: 0; /* Makes the thumb square */
+    border: 2px solid #888; /* Optional border for better visibility */
+}
+
+/* Custom styles for the slider thumb in Firefox */
+.font-size-slider::-moz-range-thumb {
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    background: #4CAF50; /* Thumb color */
+    cursor: pointer;
+    border-radius: 0; /* Makes the thumb square */
+    border: 2px solid #888; /* Optional border for better visibility */
+}
+
+/* Styles for the slider and font size label */
+.slider-container {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type="range"] {
+    flex: 1;
+    margin-right: 10px; /* Space between slider and label */
+}
+
+.font-size-label {
+    font-size: 14px;
+    color: #333;
+}
+
+#PixelBrukt-preview .sample-text {
+    font-family: 'PixelBrukt';
+    font-size: 300px;
+    transform: translateY(-120px);    
+}
+
+#SerifDiamond .sample-text {
+    font-family: 'SerifDiamond';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 180px;
+    transform: translateY(-40px);
+    letter-spacing: -10px;
+}
+
+#savoy-threshold-sample .static-text {
+    font-family: 'SavoyThreshRegular';
+    font-size: 400px;
+    transform: translateY(-340px);
+    pointer-events: none;
+}
+
+/* Make text selection invisible */
+#savoy-threshold-sample .static-text::selection {
+    background-color: transparent;
+}
+
+#star-block-sample .sample-text {
+    font-family: 'StarBlock';
+    font-size: 250px;
+    transform: translateY(-120px);
+}
+
+#CommAlt .sample-text {
+    font-family: 'Community Alternative';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 200px;
+    transform: translateY(10px);
+}
+
+#AltDefaultNeue .sample-text {
+    font-family: 'Helvetica Neue Std CN Alt Default';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 350px;
+    transform: translateY(-120px);
+}
+
+
+#TacMono .sample-text {
+    font-family: 'Tac Mono';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 200px;
+}
+
+#GaramondCluster .sample-text {
+    font-family: 'GaramondCluster';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 200px;
+}
+
+#DashDot .sample-text {
+    font-family: 'DashDot';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 200px;
+}
+
+#noglpyh .responsive-image {
+    min-height: 200px;
+}
+
+#atestgif .responsive-image {
+    height: 320px; /* Adjust to the desired height */
+    width: auto;   /* Maintain aspect ratio */
+    display: block;
+    margin: 10px auto; /* Centers the image horizontally */
+    margin-left: -4vw;
+    transform: translateY(-60px);
+}
+
+#tool .responsive-image {
+    height: 400px; /* Adjust to the desired height */
+    width: auto;   /* Maintain aspect ratio */
+    display: block;
+    margin: 10px auto; /* Centers the image horizontally */
+    transform: translateY(-45px);
+}
+
+
+#greengif .responsive-image {
+    height: 450px; /* Adjust to the desired height */
+    width: auto;   /* Maintain aspect ratio */
+    display: block;
+    margin: 10px auto; /* Centers the image horizontally */
+    transform: translateY(-120px);
+}
+
+
+/* Font-face declarations */
+@font-face {
+    font-family: 'Tac Mono';
+    src: url('TacMono-Regular.woff2') format('woff2'),
+        url('TacMono-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'PixelBrukt';
+    src: url('PixelBrukt-Regular.woff2') format('woff2'),
+         url('PixelBrukt-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SerifDiamond';
+    src: url('SerifDiamond-Regular.woff2') format('woff2'),
+         url('SerifDiamond-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SavoyThreshRegular';
+    src: url('SavoyThresh-Regular.woff2') format('woff2'),
+         url('SavoyThresh-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'StarBlock';
+    src: url('StarBlock-Regular.woff2') format('woff2'),
+         url('StarBlock-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Std CN Alt Default';
+    src: url('HelveticaNeueStdCNAltDefault-Regular.woff2') format('woff2'),
+        url('HelveticaNeueStdCNAltDefault-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Community Alternative';
+    src: url('CommunityAlternative-Regular.woff2') format('woff2'),
+        url('CommunityAlternative-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GaramondCluster';
+    src: url('Serif_Cluster.woff2') format('woff2'),
+        url('Serif_Cluster.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'DashDot';
+    src: url('Million_Underscore_Script.woff2') format('woff2'),
+        url('Million_Underscore_Script.woff') format('woff');
+}
