@@ -24,28 +24,53 @@ body {
 
 img.fullscreen-img {
     display: block;
-    width: 100%;
+    width: 150%;
     height: auto; /* Maintain aspect ratio */
   }
   
-  /* Breakpoint for devices with a width of 768px and below (iPads in portrait, mobile phones) */
-  @media only screen and (max-width: 768px) {
-    img.fullscreen-img {
-      width: 100vw;   /* Full width of the viewport */
-      height: 100vh;  /* Full height of the viewport */
-      object-fit: cover;  /* Ensure the image covers the screen */
+/* Hide main content and show full-screen image on mobile */
+@media (max-width: 768px) {
+    main {
+        display: none; /* Hide main content on mobile */
     }
-  }
-  
-  /* Breakpoint for iPads in landscape mode (width between 769px and 1024px) */
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    img.fullscreen-img {
-      width: 100vw;   /* Full width of the viewport */
-      height: 100vh;  /* Full height of the viewport */
-      object-fit: cover;  /* Ensure the image covers the screen */
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Prevent scrolling */
     }
-  }
-  
+
+    .fullscreen-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;   /* Full viewport width */
+        height: 100vh;  /* Full viewport height */
+        z-index: 99;    /* Keep it on top */
+        background-color: black; /* Optional: A fallback background */
+    }
+
+    .fullscreen-img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: fill; /* Ensure the image covers the viewport while maintaining aspect ratio */
+        display: block;    /* Ensure the image is displayed */
+    }
+}
+
+/* Show the main content and hide the full-screen image on larger devices */
+@media (min-width: 769px) {
+    .fullscreen-section {
+        display: none; /* Hide full-screen section on larger devices */
+    }
+
+    .fullscreen-img {
+        display: none; /* Hide the image on larger screens */
+    }
+}  
 
 header {
     background-color: #bfbfbf;
@@ -213,9 +238,10 @@ input[type="range" i] {
     max-height: 600px; /* Adjust the height as needed */
     width: auto;   /* Maintain the natural aspect ratio */
     display: block;
-    margin: 10px auto; /* Centers the PDF horizontally */
-    transform: translateY(-45px); /* Adjust positioning if needed */
+    margin: 14px auto; /* Centers the PDF horizontally */
     mix-blend-mode: multiply;
+    -webkit-mix-blend-mode: multiply;
+    transform: translate3d(0,-45px,0);
 }
 
 #crete2 .responsive-concrete {
@@ -224,7 +250,7 @@ input[type="range" i] {
     height: auto;      /* Maintain the aspect ratio */
     display: block;
     margin: 10px auto;
-    padding: 10px;
+    padding: 13px;
     mix-blend-mode: multiply;
 }
 
@@ -234,7 +260,7 @@ input[type="range" i] {
     height: auto;      /* Maintain the aspect ratio */
     display: block;
     margin: 10px auto;
-    padding: 10px;
+    padding: 13px;
     mix-blend-mode: normal;
     filter: grayscale(100%) contrast(200%);
 
@@ -254,7 +280,7 @@ input[type="range" i] {
     justify-content: space-around;
     margin-top: 10px;
     transform: translateY(-95px); /* Adjust positioning if needed */
-    z-index: 99;
+    z-index: 10;
 }
 
 .number {
