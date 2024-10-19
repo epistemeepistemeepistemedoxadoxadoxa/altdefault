@@ -24,7 +24,7 @@ body {
 
 img.fullscreen-img {
     display: block;
-    width: 150%;
+    width: 300vw;
     height: auto; /* Maintain aspect ratio */
   }
   
@@ -44,7 +44,7 @@ img.fullscreen-img {
         width: 150vw;   /* Full viewport width */
         height: 150vh;  /* Full viewport height */
         z-index: 99;    /* Keep it on top */
-        background-color: black; /* Optional: A fallback background */
+        background-color: rgb(255, 255, 255); /* Optional: A fallback background */
     }
 
     .fullscreen-img {
