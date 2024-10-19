@@ -41,15 +41,15 @@ img.fullscreen-img {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100vw;   /* Full viewport width */
-        height: 100vh;  /* Full viewport height */
+        width: 150vw;   /* Full viewport width */
+        height: 150vh;  /* Full viewport height */
         z-index: 99;    /* Keep it on top */
         background-color: black; /* Optional: A fallback background */
     }
 
     .fullscreen-img {
-        width: 100vw;
-        height: 100vh;
+        width: 150vw;
+        height: 150vh;
         object-fit: cover; /* Ensure the image covers the viewport while maintaining aspect ratio */
         display: block;    /* Ensure the image is displayed */
     }
