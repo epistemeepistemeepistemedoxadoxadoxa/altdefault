@@ -409,7 +409,7 @@ input[type="range"] {
 }
 
 #Metaballvetica .sample-text {
-    font-family: 'Metaballvetica';
+    font-family: 'MetaballveticaNeueLTStdCn';
     padding: 10px; /* Remove extra padding */
     display: inline-block; /* Ensures single-line text without expanding the container */
     vertical-align: auto;
@@ -524,10 +524,15 @@ input[type="range"] {
 
 
 @font-face {
-    font-family: 'Metaballvetica';
+    font-family: 'MetaballveticaNeueLTStdCn';
     src: url('MetaballveticaNeueLTStdCn-Regular.woff2') format('woff2'),
         url('MetaballveticaNeueLTStdCn-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
+
+
 
 @font-face {
     font-family: 'PixelBrukt';
