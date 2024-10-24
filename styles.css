@@ -414,7 +414,7 @@ input[type="range"] {
     display: inline-block; /* Ensures single-line text without expanding the container */
     vertical-align: auto;
     font-size: 180px;
-    transform: translateY(-40px);
+    /* transform: translateY(-40px); */
 }
 
 #savoy-threshold-sample .static-text {
