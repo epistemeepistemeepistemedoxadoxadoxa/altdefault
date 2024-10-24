@@ -408,6 +408,15 @@ input[type="range"] {
     transform: translateY(-40px);
 }
 
+#Metaballvetica .sample-text {
+    font-family: 'Metaballvetica';
+    padding: 10px; /* Remove extra padding */
+    display: inline-block; /* Ensures single-line text without expanding the container */
+    vertical-align: auto;
+    font-size: 180px;
+    transform: translateY(-40px);
+}
+
 #savoy-threshold-sample .static-text {
     font-family: 'SavoyThreshRegular';
     font-size: 400px;
@@ -511,6 +520,13 @@ input[type="range"] {
     font-family: 'MetaballTimes';
     src: url('MetaballTimesCaps-Regular.woff2') format('woff2'),
         url('MetaballTimesCaps-Regular.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Metaballvetica';
+    src: url('MetaballveticaNeueLTStdCn-Regular.woff2') format('woff2'),
+        url('MetaballveticaNeueLTStdCn-Regular.woff') format('woff');
 }
 
 @font-face {
